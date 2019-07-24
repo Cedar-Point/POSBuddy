@@ -34,9 +34,9 @@
             this.btnHome = new System.Windows.Forms.Button();
             this.lboxHelp = new System.Windows.Forms.ListBox();
             this.BottomTable = new System.Windows.Forms.TableLayoutPanel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnForward = new System.Windows.Forms.Button();
+            this.btnCustom = new System.Windows.Forms.Button();
             this.Browser = new System.Windows.Forms.WebBrowser();
             this.MainTable.SuspendLayout();
             this.BottomTable.SuspendLayout();
@@ -73,7 +73,7 @@
             this.lblHelpTopic.Name = "lblHelpTopic";
             this.lblHelpTopic.Size = new System.Drawing.Size(294, 75);
             this.lblHelpTopic.TabIndex = 5;
-            this.lblHelpTopic.Text = "Help Topics";
+            this.lblHelpTopic.Text = "Menu";
             this.lblHelpTopic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTitle
@@ -84,7 +84,7 @@
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(846, 75);
             this.lblTitle.TabIndex = 4;
-            this.lblTitle.Text = "Micros Help";
+            this.lblTitle.Text = "Please wait...";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnHome
@@ -125,9 +125,9 @@
             this.BottomTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.BottomTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.BottomTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.BottomTable.Controls.Add(this.button3, 0, 0);
-            this.BottomTable.Controls.Add(this.button2, 2, 0);
-            this.BottomTable.Controls.Add(this.button1, 1, 0);
+            this.BottomTable.Controls.Add(this.btnBack, 0, 0);
+            this.BottomTable.Controls.Add(this.btnForward, 2, 0);
+            this.BottomTable.Controls.Add(this.btnCustom, 1, 0);
             this.BottomTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BottomTable.Location = new System.Drawing.Point(300, 580);
             this.BottomTable.Margin = new System.Windows.Forms.Padding(0);
@@ -137,49 +137,52 @@
             this.BottomTable.Size = new System.Drawing.Size(852, 75);
             this.BottomTable.TabIndex = 6;
             // 
-            // button3
+            // btnBack
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(0, 0);
-            this.button3.Margin = new System.Windows.Forms.Padding(0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(284, 75);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Back";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.Button3_Click);
+            this.btnBack.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(0, 0);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(0);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(284, 75);
+            this.btnBack.TabIndex = 5;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
-            // button2
+            // btnForward
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(568, 0);
-            this.button2.Margin = new System.Windows.Forms.Padding(0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(284, 75);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Forward";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnForward.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnForward.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnForward.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnForward.Location = new System.Drawing.Point(568, 0);
+            this.btnForward.Margin = new System.Windows.Forms.Padding(0);
+            this.btnForward.Name = "btnForward";
+            this.btnForward.Size = new System.Drawing.Size(284, 75);
+            this.btnForward.TabIndex = 4;
+            this.btnForward.Text = "Forward";
+            this.btnForward.UseVisualStyleBackColor = false;
+            this.btnForward.Click += new System.EventHandler(this.BtnForward_Click);
             // 
-            // button1
+            // btnCustom
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Enabled = false;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(284, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(284, 75);
-            this.button1.TabIndex = 3;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnCustom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCustom.Enabled = false;
+            this.btnCustom.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnCustom.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustom.Location = new System.Drawing.Point(284, 0);
+            this.btnCustom.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCustom.Name = "btnCustom";
+            this.btnCustom.Size = new System.Drawing.Size(284, 75);
+            this.btnCustom.TabIndex = 3;
+            this.btnCustom.UseVisualStyleBackColor = false;
             // 
             // Browser
             // 
+            this.Browser.AllowWebBrowserDrop = false;
             this.Browser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Browser.IsWebBrowserContextMenuEnabled = false;
             this.Browser.Location = new System.Drawing.Point(300, 75);
             this.Browser.Margin = new System.Windows.Forms.Padding(0);
             this.Browser.MinimumSize = new System.Drawing.Size(20, 20);
@@ -215,9 +218,9 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblHelpTopic;
         private System.Windows.Forms.TableLayoutPanel BottomTable;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnForward;
+        private System.Windows.Forms.Button btnCustom;
+        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.WebBrowser Browser;
     }
 }

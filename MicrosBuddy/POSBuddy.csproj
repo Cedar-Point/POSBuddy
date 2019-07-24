@@ -77,10 +77,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Micros\images\WS6.png" />
     <Content Include="Micros\Main.html" />
+    <Content Include="Micros\styles\all.css" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy $(ProjectDir)\Micros\* $(TargetDir)\*</PostBuildEvent>
+    <PostBuildEvent>xcopy $(ProjectDir)\Micros\* $(TargetDir)\* /S /Y</PostBuildEvent>
   </PropertyGroup>
 </Project>

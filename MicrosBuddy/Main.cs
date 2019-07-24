@@ -24,13 +24,9 @@ namespace POSBuddy
             Close();
         }
 
-        private void Button3_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void Browser_ProgressChanged(object sender, WebBrowserProgressChangedEventArgs e)
         {
+            lblTitle.Text = Browser.Document.Title;
             foreach (HtmlElement menu in Browser.Document.GetElementsByTagName("menu"))
             {
                 menu.Style = "display:none;";
@@ -45,6 +41,7 @@ namespace POSBuddy
                 UpdateHelpMenu();
                 break;
             }
+            UpdateNavButtons();
         }
         private void UpdateHelpMenu()
         {
@@ -54,13 +51,41 @@ namespace POSBuddy
                 lboxHelp.Items.Add(menuItem.Key);
             }
         }
-
+        private void UpdateNavButtons()
+        {
+            if(Browser.CanGoBack)
+            {
+                btnBack.Enabled = true;
+            }
+            else
+            {
+                btnBack.Enabled = false;
+            }
+            if(Browser.CanGoForward)
+            {
+                btnForward.Enabled = true;
+            }
+            else
+            {
+                btnForward.Enabled = false;
+            }
+        }
         private void LboxHelp_Click(object sender, EventArgs e)
         {
             if(lboxHelp.SelectedIndex != -1)
             {
                 Browser.Url = new Uri(HelpMenu[lboxHelp.SelectedItem.ToString()]);
             }
+        }
+
+        private void BtnForward_Click(object sender, EventArgs e)
+        {
+            Browser.GoForward();
+        }
+
+        private void BtnBack_Click(object sender, EventArgs e)
+        {
+            Browser.GoBack();
         }
     }
 }
