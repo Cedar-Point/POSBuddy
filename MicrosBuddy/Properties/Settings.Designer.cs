@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MicrosBuddy.Properties
+namespace POSBuddy.Properties
 {
 
 
